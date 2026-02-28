@@ -1,6 +1,15 @@
 ---
 name: session-kickoff
 description: 当用户开始编程任务、说"继续上次"/"接着做"/"下一个功能"，或项目目录存在 claude-progress.txt 和 feature_list.json 时自动激活。提供 session 启动标准流程。
+triggers:
+  - "继续上次"
+  - "接着做"
+  - "下一个功能"
+  - "继续开发"
+  - "开始工作"
+files:
+  - "claude-progress.txt"
+  - "feature_list.json"
 ---
 
 ## Long-Running Agent Session 启动规范

@@ -1,0 +1,22 @@
+{
+  "hooks": [
+    {
+      "event": "PostToolUse",
+      "matcher": "Write|Edit",
+      "description": "写入 feature_list.json 后校验格式合法性",
+      "conditions": {
+        "file_pattern": "**/feature_list.json"
+      },
+      "action": {
+        "type": "validate_json",
+        "schema": {
+          "required": ["project", "created_at", "features"],
+          "features_item_required": ["category", "priority", "description", "steps", "passes"],
+          "passes_type": "boolean"
+        },
+        "on_error": "warn",
+        "message": "⚠️  feature_list.json 格式校验失败，请检查结构是否符合规范（passes 必须为 boolean，不能删除条目）"
+      }
+    }
+  ]
+}

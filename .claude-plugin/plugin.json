@@ -3,5 +3,21 @@
   "version": "1.0.0",
   "description": "长运行编程 Agent 工具集：跨多个 context window 持续推进项目，基于 Anthropic 工程博客最佳实践",
   "author": { "name": "Tony" },
-  "keywords": ["agent", "long-running", "autonomous", "coding"]
+  "keywords": ["agent", "long-running", "autonomous", "coding"],
+  "skills": [
+    "skills/long-running-agent",
+    "skills/incremental-progress"
+  ],
+  "commands": [
+    "commands/init",
+    "commands/run",
+    "commands/status"
+  ],
+  "agents": [
+    "agents/initializer",
+    "agents/coding-session"
+  ],
+  "hooks": [
+    "hooks/post-write-validate.json"
+  ]
 }
